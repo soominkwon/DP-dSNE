@@ -2,7 +2,7 @@
 
 This repository contains scripts for decentralized analysis of neuroimaging datasets similar to paper: https://www.biorxiv.org/content/10.1101/826974v2.abstract
 
-This new paper is currently under review for submission. This paper ensures formal privacy guarantees where the data at each local site is private thus precluding
+This new paper is currently under review for submission, please cite the new paper once published. This paper ensures formal privacy guarantees where the data at each local site is private thus precluding
 centralized analyses. The privacy guarantees are made with using the recently proposed AdaCliP algorithm.
 
 AdaCliP Paper: https://arxiv.org/abs/1908.07643
