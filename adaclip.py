@@ -6,10 +6,22 @@ Created on Wed Nov 11 17:07:41 2020
 @author: soominkwon
 """
 
+""" Working AdaCliP implementation. Refer to the original paper for more details.
+"""
+
 import numpy as np
 
 
 def noise_addition(gradient_matrix, m_mat, b_mat, noise_variance):
+    """ Function that adds noise given variables.
+
+        Arguments:
+            gradient_matrix: Matrix of all the gradients from gradient descent
+            m_mat: Matrix of 'm' or mean values
+            b_mat: Matrix of 'b' values from paper
+            noise_variance: variance to add Gaussian nosie
+
+    """
     noisy_gradient_mat = np.zeros((gradient_matrix.shape))
     new_gradient_matrix = (gradient_matrix - m_mat) / b_mat
     norm_mat = np.linalg.norm(new_gradient_matrix, axis=1)
@@ -62,6 +74,11 @@ def update_variance(gradient_matrix, mean_matrix, b_matrix, noise_variance, h_1,
 
 
 def AdaClip(gradient_matrix, noise_variance, m_mat, s_mat, beta_1, beta_2, h_1, h_2):
+    """ Putting it all together for AdaCliP implementation. You should initialize your variables (e.g. s_mat, b_mat) outside
+        of this function.
+    
+    
+    """
     b_mat = compute_b_matrix(s_mat)
     noisy_gradient_matrix = noise_addition(gradient_matrix=gradient_matrix, m_mat=m_mat,
                                                 b_mat=b_mat, noise_variance=noise_variance)
